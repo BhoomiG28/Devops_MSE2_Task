@@ -1,0 +1,62 @@
+Linux Commands
+
+All Commands
+Task 1: Check current logged-in user
+whoami
+id -un
+
+
+Task 2: Check which users are currently logged in and what they are doing
+who
+w
+
+
+Task 3: View login history of the system
+last
+lastlog
+
+
+Task 4: Display complete system information, hostname, and uptime
+uname -a
+hostname
+uptime
+Additional useful command:
+hostnamectl
+
+
+Task 5: Create two groups (developers and qa) and verify
+Create groups:
+1
+sudo groupadd developers
+sudo groupadd qa
+Verify groups:
+getent group developers
+getent group qa
+Display complete group list:
+cat /etc/group
+
+
+Task 6: Create users and assign them to respective groups
+Create users:
+sudo useradd -m -G developers aman
+sudo useradd -m -G developers ritu
+sudo useradd -m -G qa karan
+Set passwords:
+sudo passwd aman
+sudo passwd ritu
+sudo passwd karan
+Verify group assignment:
+id aman
+id ritu
+id karan
+
+
+Task 7: Delete employee ritu account with home directory
+Check active sessions:
+2
+who
+w
+Delete user with home directory:
+sudo userdel -r ritu
+Verify deletion:
+id ritu
